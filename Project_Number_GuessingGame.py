@@ -15,6 +15,7 @@ def main():
     s=input("ARE YOU READY? ")                                      #asks user if they are to play the game 
 
     if s=="yes" or s=="YES" or s=="Yes":
+        
         result=int(startgame(s))                                   # calls the function startgame()
 
 
@@ -28,28 +29,35 @@ def main():
 
 
 def startgame(r):
+    
     total_attempts=0                                            #intializing total_attepts to 0 
+   
     print("What numbers do you want to guess between ")
+    
     print("Enter first number here ")                           # users inputs first interval 
    
     while True:                                                 # the while loop is used for users input, if user inputs anything else other than an integer then the user is 
-         try:                                                   # asked to input an integer again since it will create an error for the input therefore it goes into to the 
+        
+        try:                                                   # asked to input an integer again since it will create an error for the input therefore it goes into to the 
                                                                 #exception:
             randominterval1=int(input())
+            
             break
         
         except:                                                
             print("Please input an integer please ")
-            continue
+            
+            continue                                            # goes back up to the while loop 
 
     print("Now enter second number here ")
    
     while True: 
          try:
             randominterval2=int(input())                        #user inputs second interval 
-             if randominterval2<randominterval1:
+             
+               if randominterval2<randominterval1:
                 
-                print("Your second number should be greater than the first number") # just in case that the user inputs a larger first value then the second 
+                print("Your second number should be greater than the first number")   # just in case that the user inputs a larger first value then the second 
 
                 print("Please input your numbers again ")
 
@@ -65,6 +73,7 @@ def startgame(r):
          
         except:                                                                     
             print("Please input an integer please ")
+            
             continue
 
 
@@ -72,6 +81,7 @@ def startgame(r):
                                                                                         # or between the intervals
 
     while r == "yes" or r == "YES" or r == "Yes":
+        
         print(f"What number are you guessing between {randominterval1} and {randominterval2}? ") # prints out the two intervals what the user inputed
 
         try:
@@ -80,20 +90,29 @@ def startgame(r):
 
 
             if int(guess) < int(randominterval1) or int(guess) > int(randominterval2):
+                
                 print("Please input values between intervals")
 
             elif int(guess) == randomnumber:
+                
                 print("Oh wow you guessed perfectly ")
+                
                 break
 
             elif int(guess) < randomnumber:
+                
                 print("Guess a bit higher ")
+                
                 total_attempts += 1
 
             elif int(guess) > randomnumber:
+                
                 print("Guess a bit lower")
+                
                 total_attempts += 1
+        
         except:
+            
             print("Invalid input please try entering a integers as inputs ")
 
     return total_attempts    # returns total number of attempts made by the user before guessing correctly 
