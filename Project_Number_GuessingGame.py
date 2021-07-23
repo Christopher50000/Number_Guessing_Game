@@ -8,18 +8,18 @@ def main():
     print("The game is simple guess the random number")
 
 
-    Players_nameInput=input(str('What is your name? '))
+    Players_nameInput=input(str('What is your name? '))             #asks users name 
 
     print(f"That is a cool name {Players_nameInput}")
 
-    s=input("ARE YOU READY? ")
+    s=input("ARE YOU READY? ")                                      #asks user if they are to play the game 
 
     if s=="yes" or s=="YES" or s=="Yes":
-        result=int(startgame(s))
+        result=int(startgame(s))                                   # calls the function startgame()
 
 
-        print(f"The number of attempts it took {Players_nameInput} to guess correctly was {result}")
-
+        print(f"The number of attempts it took {Players_nameInput} to guess correctly was {result}")      #prints out players  name along with the number of attempts it took to
+                                                                                                          #guess correctly 
     else:
         print("Its all good maybe next time")
 
@@ -28,11 +28,12 @@ def main():
 
 
 def startgame(r):
-    total_attempts=0
+    total_attempts=0                                            #intializing total_attepts to 0 
     print("What numbers do you want to guess between ")
-    print("Enter first number here ")
-    while True:
-         try:
+    print("Enter first number here ")                           # users inputs first interval 
+   
+    while True:                                                 # the while loop is used for users input, if user inputs anything else other than an integer then the user is 
+         try:                                                   #
             randominterval1=int(input())
             break
          except:
@@ -40,22 +41,24 @@ def startgame(r):
             continue
 
     print("Now enter second number here ")
-    while True:
+    while True: 
          try:
-            randominterval2=int(input())
+            randominterval2=int(input())                        #user inputs second interval 
             break
          except:
             print("Please input an integer please ")
             continue
 
 
-    randomnumber = int(random.randint(int(randominterval1), int(randominterval2)))
+    randomnumber = int(random.randint(int(randominterval1), int(randominterval2)))      # the random number is generated which can either be the users intervals 
+                                                                                        # or between the intervals
 
     while r == "yes" or r == "YES" or r == "Yes":
-        print(f"What number are you guessing between {randominterval1} and {randominterval2}? ")
+        print(f"What number are you guessing between {randominterval1} and {randominterval2}? ") # prints out what the user inputed
 
         try:
-            guess = input()
+            guess =int(input())                     # user inputs guess and the following are conditionals and if user does not enter a integer it will prompt the user to input 
+                                                    #an integer 
 
 
             if int(guess) < int(randominterval1) or int(guess) > int(randominterval2):
@@ -75,6 +78,6 @@ def startgame(r):
         except:
             print("Invalid input please try entering a integers as inputs ")
 
-    return total_attempts
+    return total_attempts    # returns total number of attempts made by the user before guessing correctly 
 
 if __name__ == "__main__":main()
