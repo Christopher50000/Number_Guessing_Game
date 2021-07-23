@@ -37,11 +37,13 @@ def startgame(r):
                                                                 #exception:
             randominterval1=int(input())
             break
-         except:                                                
+        
+        except:                                                
             print("Please input an integer please ")
             continue
 
     print("Now enter second number here ")
+   
     while True: 
          try:
             randominterval2=int(input())                        #user inputs second interval 
@@ -60,7 +62,8 @@ def startgame(r):
                 continue
             
             break
-         except:                                                                     
+         
+        except:                                                                     
             print("Please input an integer please ")
             continue
 
