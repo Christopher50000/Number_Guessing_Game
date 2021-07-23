@@ -33,10 +33,11 @@ def startgame(r):
     print("Enter first number here ")                           # users inputs first interval 
    
     while True:                                                 # the while loop is used for users input, if user inputs anything else other than an integer then the user is 
-         try:                                                   #
+         try:                                                   # asked to input an integer again since it will create an error for the input therefore it goes into to the 
+                                                                #exception:
             randominterval1=int(input())
             break
-         except:
+         except:                                                
             print("Please input an integer please ")
             continue
 
@@ -44,8 +45,22 @@ def startgame(r):
     while True: 
          try:
             randominterval2=int(input())                        #user inputs second interval 
+             if randominterval2<randominterval1:
+                
+                print("Your second number should be greater than the first number") # just in case that the user inputs a larger first value then the second 
+
+                print("Please input your numbers again ")
+
+                print("Enter your first number")
+
+                randominterval1 = int(input())
+
+                print("Now enter second number here ")
+
+                continue
+            
             break
-         except:
+         except:                                                                     
             print("Please input an integer please ")
             continue
 
@@ -54,7 +69,7 @@ def startgame(r):
                                                                                         # or between the intervals
 
     while r == "yes" or r == "YES" or r == "Yes":
-        print(f"What number are you guessing between {randominterval1} and {randominterval2}? ") # prints out what the user inputed
+        print(f"What number are you guessing between {randominterval1} and {randominterval2}? ") # prints out the two intervals what the user inputed
 
         try:
             guess =int(input())                     # user inputs guess and the following are conditionals and if user does not enter a integer it will prompt the user to input 
