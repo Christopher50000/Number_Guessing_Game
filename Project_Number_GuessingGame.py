@@ -12,19 +12,28 @@ def main():
 
     print(f"That is a cool name {Players_nameInput}")
 
-    s=input("ARE YOU READY? ")                                      #asks user if they are to play the game 
-
-    if s=="yes" or s=="YES" or s=="Yes":
+    while True:                                    
+        s = input(str("ARE YOU READY? "))             #asks user if they are to play the game  
         
-        result=int(startgame(s))                                   # calls the function startgame()
-
-
-        print(f"The number of attempts it took {Players_nameInput} to guess correctly was {result}")      #prints out players  name along with the number of attempts it took to
+        if s=="yes" or s=="YES" or s=="Yes":
+            
+            result=int(startgame(s))                 # Calls the function startgame 
+           
+            print(f"The number of attempts it took {Players_nameInput} to guess correctly was {result}") #prints out players  name along with the number of attempts it took to
                                                                                                           #guess correctly 
-    else:
-        print("Its all good maybe next time")
+            
+            break
 
 
+        elif(s=="no" or s=="NO" or s=="No"):
+            
+            print("See ya next time ")
+            
+            break
+
+        else:
+            print("Please input a valid response")
+            continue
 
 
 
@@ -55,7 +64,7 @@ def startgame(r):
          try:
             randominterval2=int(input())                        #user inputs second interval 
              
-               if randominterval2<randominterval1:
+               if randominterval2<=randominterval1:
                 
                 print("Your second number should be greater than the first number")   # just in case that the user inputs a larger first value then the second 
 
