@@ -73,7 +73,7 @@ def startgame(r):
         try:
             randominterval2=int(input())                        #user inputs second interval 
              
-               if randominterval2<=randominterval1:
+            if randominterval2<=randominterval1:
                 
                 print("Your second number should be greater than the first number")   # just in case that the user inputs a larger first value then the second 
 
