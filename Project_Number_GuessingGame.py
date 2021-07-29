@@ -7,10 +7,20 @@ def main():
 
     print("The game is simple guess the random number")
 
+      while True:
+        Players_nameInput=input(str('What is your name? ')) # asks users name
 
-    Players_nameInput=input(str('What is your name? '))             #asks users name 
+        checkname=any(chr.isdigit() for chr in Players_nameInput) # this is to check if the user only uses letters
+                                                                  # it goes through each letter to make sure its not a digit 
 
-    print(f"That is a cool name {Players_nameInput}")
+
+        if checkname==True:                                       
+            print("Please do not type any digits in name ")
+            continue
+        else:
+            print(f"That is a cool name {Players_nameInput}")
+            break
+
 
     while True:                                    
         s = input(str("ARE YOU READY? "))             #asks user if they are to play the game  
