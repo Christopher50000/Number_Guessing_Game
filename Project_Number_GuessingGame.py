@@ -7,7 +7,7 @@ def main():
 
     print("The game is simple guess the random number")
 
-      while True:
+    while True:
         Players_nameInput=input(str('What is your name? ')) # asks users name
 
         checkname=any(chr.isdigit() for chr in Players_nameInput) # this is to check if the user only uses letters
@@ -21,7 +21,7 @@ def main():
             print(f"That is a cool name {Players_nameInput}")
             break
 
-
+    
     while True:                                    
         s = input(str("ARE YOU READY? "))             #asks user if they are to play the game  
         
@@ -34,13 +34,12 @@ def main():
             
             break
 
-
         elif(s=="no" or s=="NO" or s=="No"):
             
             print("See ya next time ")
             
             break
-
+        
         else:
             print("Please input a valid response")
             continue
@@ -71,7 +70,7 @@ def startgame(r):
     print("Now enter second number here ")
    
     while True: 
-         try:
+        try:
             randominterval2=int(input())                        #user inputs second interval 
              
                if randominterval2<=randominterval1:
