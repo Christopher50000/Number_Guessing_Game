@@ -21,7 +21,7 @@ def main():
             print("Please do not type any digits in name ")
             continue
         
-        elif Special_char_test.search(Players_nameInput) == None: # checks if the user is typing special character
+        elif Special_char_test.search(Players_nameInput): # checks if the user is typing special character
             print("Please dont type special characters ")
             continue
         
