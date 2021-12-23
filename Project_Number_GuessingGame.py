@@ -1,4 +1,5 @@
 import random
+import re
 
 # This program is a guessing game for a user to play
 
@@ -12,11 +13,18 @@ def main():
 
         checkname=any(chr.isdigit() for chr in Players_nameInput) # this is to check if the user only uses letters
                                                                   # it goes through each letter to make sure its not a digit 
+            
+         Special_char_test=re.compile('[@_!#$%^&*()<>?/\|}{~:]') # this variable is used to test to see if the string contains any special characters 
 
 
         if checkname==True:                                       
             print("Please do not type any digits in name ")
             continue
+        
+        elif Special_char_test.search(Players_nameInput) == None: # checks if the user is typing special character
+            print("Please dont type special characters ")
+            continue
+        
         else:
             print(f"That is a cool name {Players_nameInput}")
             break
